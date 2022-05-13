@@ -90,14 +90,20 @@ let testArray = [2, 3, 4]; //eslint-disable-line
 // we need to get the data from sum, exclude the string, and then combine the numerical data with the third from the array.............but how
 
 function sumArray(sumArr) { //eslint-disable-line
-  let newSum = (sum+[2]);
-  sum(testArray);
-  multiply(testArray);
+
+  let total = sum(sumArr[0],sumArr[1])[0];
+  total = sum(total,sumArr[2])[0];
+
+  let myStr = `${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${total} is their sum.`;
+  console.log(total);
+  console.log(myStr);
+
+  return [total, myStr];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
