@@ -20,6 +20,8 @@ testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
+
+
 /////////////////////////////////////
 /* Problem 2
 Write a function called multiply() that takes in two numbers as arguments and returns an array where the first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
@@ -54,13 +56,18 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  let mySum = a+b+c;
-  let myProd = a*b*c;
-  let myStrSum = `${a} and ${b} and ${c} sum to ${mySum}.`;
-  let myStrProd = `The product of ${a} and ${b} and ${c} is ${myProd}.`;
-  console.log(mySum, myProd, myStrSum, myStrProd);
-  return [mySum, myProd, myStrSum, myStrProd];
+  let total = sum(a,b)[0];
+  total = sum(total,c)[0];
+  
+  let pTotal = multiply(a,b)[0];
+  pTotal = multiply(pTotal,c)[0];
+  
+  let myStrSum = `${a} and ${b} and ${c} sum to ${total}.`;
+  let myStrProd = `The product of ${a} and ${b} and ${c} is ${pTotal}.`;
+  console.log(total);
+  console.log(pTotal);
 
+  return [total, pTotal, myStrSum, myStrProd];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -80,9 +87,12 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 let testArray = [2, 3, 4]; //eslint-disable-line
+// we need to get the data from sum, exclude the string, and then combine the numerical data with the third from the array.............but how
 
 function sumArray(sumArr) { //eslint-disable-line
-
+  let newSum = (sum+[2]);
+  sum(testArray);
+  multiply(testArray);
 }
 
 // Here is the test for sumArray(); uncomment it to run it
