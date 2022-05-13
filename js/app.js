@@ -20,6 +20,8 @@ testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
+
+
 /////////////////////////////////////
 /* Problem 2
 Write a function called multiply() that takes in two numbers as arguments and returns an array where the first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
@@ -85,9 +87,10 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 let testArray = [2, 3, 4]; //eslint-disable-line
+// we need to get the data from sum, exclude the string, and then combine the numerical data with the third from the array.............but how
 
 function sumArray(sumArr) { //eslint-disable-line
-  
+
   let total = sum(sumArr[0],sumArr[1])[0];
   total = sum(total,sumArr[2])[0];
 
