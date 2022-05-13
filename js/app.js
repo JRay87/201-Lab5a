@@ -54,13 +54,18 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  let mySum = a+b+c;
-  let myProd = a*b*c;
-  let myStrSum = `${a} and ${b} and ${c} sum to ${mySum}.`;
-  let myStrProd = `The product of ${a} and ${b} and ${c} is ${myProd}.`;
-  console.log(mySum, myProd, myStrSum, myStrProd);
-  return [mySum, myProd, myStrSum, myStrProd];
+  let total = sum(a,b)[0];
+  total = sum(total,c)[0];
+  
+  let pTotal = multiply(a,b)[0];
+  pTotal = multiply(pTotal,c)[0];
+  
+  let myStrSum = `${a} and ${b} and ${c} sum to ${total}.`;
+  let myStrProd = `The product of ${a} and ${b} and ${c} is ${pTotal}.`;
+  console.log(total);
+  console.log(pTotal);
 
+  return [total, pTotal, myStrSum, myStrProd];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -82,12 +87,20 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
+  
+  let total = sum(sumArr[0],sumArr[1])[0];
+  total = sum(total,sumArr[2])[0];
 
+  let myStr = `${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${total} is their sum.`;
+  console.log(total);
+  console.log(myStr);
+
+  return [total, myStr];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
